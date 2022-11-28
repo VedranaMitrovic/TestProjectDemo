@@ -15,7 +15,7 @@ namespace TestProjectDemo_LoginAndFillTestForm.Page
         private IWebDriver driver = WebDriver.Instance;
 
        
-        public void SelectOptions(string text)
+        public void SelectCountry(string text)
         {
             SelectElement Country = new SelectElement(driver.FindElement(By.Id("country")));
             Country.SelectByText(text);
@@ -26,6 +26,7 @@ namespace TestProjectDemo_LoginAndFillTestForm.Page
         public IWebElement Phone => driver.FindElement(By.Id("phone"));
         public IWebElement SaveButton => driver.FindElement(By.Id("save"));
         public IWebElement LogoutButton => driver.FindElement(By.Id("logout"));
+        public IWebElement SaveText => driver.FindElement(By.ClassName("tp-saved"));
 
     }
 }

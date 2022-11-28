@@ -31,12 +31,13 @@ namespace TestProjectDemo_LoginAndFillTestForm
         {
             Login("Vedrana", "12345");
            
-            testFormPage.SelectOptions("Serbia");
+            testFormPage.SelectCountry("Serbia");
             testFormPage.Address.SendKeys("Beograd 2022");
             testFormPage.Email.SendKeys("vedrana@mail.com");
             testFormPage.Phone.SendKeys("063123456");
             testFormPage.SaveButton.Click();
-            testFormPage.LogoutButton.Click();
+           
+            Assert.That("Saved", Is.EqualTo(testFormPage.SaveText.Text));
 
         }
 
